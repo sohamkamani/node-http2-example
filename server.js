@@ -8,6 +8,8 @@ const server = http2.createSecureServer({
   cert: fs.readFileSync('cert.pem')
 })
 
+// server.setTimeout(100)
+
 server.on('error', (err) => console.error(err))
 
 server.on('stream', router)
